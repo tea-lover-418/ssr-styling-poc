@@ -1,0 +1,18 @@
+Plan:
+
+Simple api with an index endpoint that returns styling info:
+
+{ 
+  primaryColor: FFFFFF
+  secondaryColor: 000000
+  logoHref: "somwhere.nl/image"
+  etc
+}
+
+This gets called and loaded into the server at start up.
+It is sent to each page as SSR props
+
+these render the styling based on this.
+
+There is an api endpoint api/reload-styles on this pwa that when called
+reloads all styling as if the application is restarted.
