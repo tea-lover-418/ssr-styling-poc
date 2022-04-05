@@ -6,10 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "start:api": "echo `no api yet",
+    "start:api": "node styling-endpoint-server",
     "lint": "next lint"
   },
   "dependencies": {
+    "express": "^4.17.3",
     "next": "12.1.4",
     "react": "18.0.0",
     "react-dom": "18.0.0"

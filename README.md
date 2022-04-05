@@ -1,34 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SSR styling POC
 
-## Getting Started
+This is a proof of concept demonstrating loading custom styles into a server side rendered NextJs application.
 
-First, run the development server:
+### Api
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+The styling is retrieved from an API, here in `styling-endpoint-server.js`. It returns a json object from endpoint `/` when called.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### PWA
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+The pwa calls the API endpoint on startup. It then sets the styling in a global singleton. When there is no response form the API, it will return to default styling.
+There is an endpoint on this front-end `api/reload-styles` which reloads the styling after startup so you don't need to restart to reflect changes.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Running
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+First run `npm run start:api`. Open a new terminal window and run `npm run dev`. You should see the styling reflected in the PWA.
