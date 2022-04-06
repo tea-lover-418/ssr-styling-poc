@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        main: "var(--color-main)",
+        primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
       },
     },

@@ -1,7 +1,8 @@
 export const Button = (props: any) => {
   const { children } = props;
+
   return (
-    <button className="border-2 border-main p-4 rounded-lg m-4">
+    <button className="border-2 border-primary p-4 rounded-lg m-4">
       {children}
     </button>
   );

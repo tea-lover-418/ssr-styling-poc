@@ -7,13 +7,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   const { styling = undefined } = globals;
 
   const theme = {
-    colors: {
-      main: styling?.primaryColor,
-      secondary: styling?.secondaryColor,
-    },
+    "--color-primary": styling?.primaryColor || "",
+    "--color-secondary": styling?.secondaryColor || "",
   };
 
-  return <Component {...pageProps} />;
+  return (
+    <div style={theme}>
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
 export default MyApp;

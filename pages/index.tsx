@@ -6,7 +6,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Button> Main </Button>
-      <SecondaryButton> Secondary! </SecondaryButton>
+      <SecondaryButton> Secondary </SecondaryButton>
     </div>
   );
 };
