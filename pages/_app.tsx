@@ -1,22 +1,19 @@
+import "../shared/styles.css";
+
 import type { AppProps } from "next/app";
-import { ThemeProvider } from "styled-components";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { globals } = pageProps;
-  const { styling } = globals;
+  const { styling = undefined } = globals;
 
   const theme = {
     colors: {
-      main: styling.primaryColor,
-      secondary: styling.secondaryColor,
+      main: styling?.primaryColor,
+      secondary: styling?.secondaryColor,
     },
   };
 
-  return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
