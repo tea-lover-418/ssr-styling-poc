@@ -1,14 +1,16 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(express.json());
 
+const styling = {
+  primaryColor: "FFFFFF",
+  secondaryColor: "000000",
+};
+
 app.get("/", (_req, res) => {
-  const styling = {
-    primaryColor: "FFFFFF",
-    secondaryColor: "000000",
-  };
+  console.log("API CALLED AAAA");
 
   return res.send(styling);
 });
