@@ -5,8 +5,8 @@ const port = 3001;
 app.use(express.json());
 
 const styling = {
-  primaryColor: "FFFFFF",
-  secondaryColor: "000000",
+  primaryColor: "#bd4126",
+  secondaryColor: "#3867a1",
 };
 
 app.get("/", (_req, res) => {
