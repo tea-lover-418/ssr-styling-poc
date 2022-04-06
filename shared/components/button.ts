@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import { colorFromProps } from "../helpers/get-color-from-props";
 
-export const Button = styled.button`
-  font-size: 1em;
+interface ButtonProps {
+  color?: string;
+}
+
+export const Button = styled.button<ButtonProps>`
+  font-size: 1.5em;
   margin: 1em;
-  padding: 0.25em 1em;
-  border-radius: 3px;
-  color: ${({ theme }) => theme.colors.main};
-  border: 2px solid ${({ theme }) => theme.colors.main};
-`;
-
-export const SecondaryButton = styled(Button)`
-  color: ${({ theme }) => theme.colors.secondary};
-  border: 2px solid ${({ theme }) => theme.colors.secondary};
+  padding: 0.5em 1.5em;
+  border-radius: 5px;
+  border: 3px solid ${(props) => colorFromProps(props)};
+  background-color: #ebebeb;
+  color: ${(props) => props.theme.colors.text};
 `;

@@ -10,7 +10,7 @@ const styling = {
 };
 
 app.get("/", (_req, res) => {
-  console.log("API CALLED AAAA");
+  console.log("API CALLED");
 
   return res.send(styling);
 });

@@ -3,12 +3,12 @@ import { ThemeProvider } from "styled-components";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { globals } = pageProps;
-  const { styling } = globals;
+  const { styling } = globals || {};
 
   const theme = {
     colors: {
-      main: styling.primaryColor,
-      secondary: styling.secondaryColor,
+      primary: styling?.primaryColor,
+      secondary: styling?.secondaryColor,
     },
   };
 
